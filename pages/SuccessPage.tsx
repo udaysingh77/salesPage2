@@ -51,13 +51,13 @@ startxref
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4">
-      <div className="max-w-2xl w-full bg-white p-10 sm:p-16 rounded-[3rem] shadow-2xl shadow-slate-200 text-center border border-slate-50 animate-in zoom-in-95 duration-500">
-        <div className="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">
+      <div className="max-w-2xl w-full bg-white p-10 sm:p-16 rounded-[3rem] shadow-2xl shadow-slate-200 text-center border border-slate-100 animate-in zoom-in-95 duration-500">
+        <div className="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">
           ✓
         </div>
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Payment Successful!</h1>
+        <h1 className="text-4xl font-extrabold text-slate-900 mb-4">Access Granted!</h1>
         <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-          Thank you for your purchase. Your digital journey starts now. We've sent a confirmation and the book link to your email.
+          Your digital journey starts now. You can download your copy of the Masterclass directly using the button below.
         </p>
         
         <div className="space-y-4">

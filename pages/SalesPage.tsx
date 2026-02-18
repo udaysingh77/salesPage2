@@ -1,9 +1,8 @@
-
 import React, { useRef } from 'react';
-import Hero from '../components/Hero';
-import CheckoutForm from '../components/CheckoutForm';
-import AIAssistant from '../components/AIAssistant';
-import ReviewCard, { ReviewProps } from '../components/ReviewCard';
+import Hero from '../components/Hero.tsx';
+import CheckoutForm from '../components/CheckoutForm.tsx';
+import ReviewCard from '../components/ReviewCard.tsx';
+import type { ReviewProps } from '../components/ReviewCard.tsx';
 
 const SalesPage: React.FC = () => {
   const checkoutRef = useRef<HTMLDivElement>(null);
@@ -47,7 +46,6 @@ const SalesPage: React.FC = () => {
     <div className="space-y-24 pb-24">
       <Hero onCtaClick={scrollToCheckout} />
 
-      {/* Features Section */}
       <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">What's Inside the Nexus?</h2>
@@ -64,31 +62,22 @@ const SalesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Social Proof + AI Assistant */}
-      <section className="bg-blue-600 py-20 text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-blue-600 py-24 text-white overflow-hidden relative">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h2 className="text-3xl sm:text-5xl font-black mb-8 leading-tight">Built for the New Generation of Entrepreneurs.</h2>
+          <p className="text-blue-100 text-xl mb-12 italic leading-relaxed">
+            "This book was the catalyst I needed. I launched my first product in 14 days and made my first sale 3 hours later. The ROI is insane. It's the only guide you'll ever need."
+          </p>
+          <div className="flex flex-col items-center">
+            <img src="https://picsum.photos/seed/user1/100/100" className="w-20 h-20 rounded-full border-4 border-white mb-4 shadow-lg" alt="Alex Rivera" />
             <div>
-              <h2 className="text-3xl sm:text-5xl font-black mb-6">Built for the <br /> New Generation.</h2>
-              <p className="text-blue-100 text-lg mb-8">
-                "This book was the catalyst I needed. I launched my first product in 14 days and made my first sale 3 hours later. The ROI is insane."
-              </p>
-              <div className="flex items-center space-x-4">
-                <img src="https://picsum.photos/seed/user1/100/100" className="w-14 h-14 rounded-full border-2 border-white" alt="User" />
-                <div>
-                  <p className="font-bold">Alex Rivera</p>
-                  <p className="text-blue-200 text-sm">Founder, DesignLab</p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:pl-12">
-               <AIAssistant />
+              <p className="font-bold text-lg">Alex Rivera</p>
+              <p className="text-blue-200">Founder, DesignLab</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Reviews Section */}
       <section id="reviews" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Wall of Love</h2>
@@ -101,12 +90,10 @@ const SalesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Checkout Section */}
       <section ref={checkoutRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <CheckoutForm price={299} />
       </section>
 
-      {/* FAQ Section */}
       <section id="faq" className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
         <div className="space-y-6">

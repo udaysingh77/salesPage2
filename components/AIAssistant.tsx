@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { askAuthorAssistant } from '../services/aiAssistant';
+import { askAuthorAssistant } from '../services/aiAssistant.ts';
 
 const AIAssistant: React.FC = () => {
   const [query, setQuery] = useState('');

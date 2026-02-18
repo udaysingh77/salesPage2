@@ -6,69 +6,32 @@ interface CheckoutFormProps {
   price: number;
 }
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({ price }) => {
+const CheckoutForm: React.FC<CheckoutFormProps> = () => {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handlePayment = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setLoading(true);
 
-    try {
-      // Simulate Backend Order Creation
-      // In production: const { data } = await axios.post('/api/create-order', { email });
-      const order = {
-        id: "order_" + Math.random().toString(36).substr(2, 9),
-        amount: price * 100, // in paisa
-        currency: "INR"
-      };
-
-      const options = {
-        key: "YOUR_RAZORPAY_KEY", // Will be injected by Razorpay SDK
-        amount: order.amount,
-        currency: "INR",
-        name: "NexusBooks",
-        description: "The Digital Economy Masterclass",
-        order_id: order.id,
-        prefill: {
-          email: email
-        },
-        handler: function (response: any) {
-          // Success Callback
-          console.log("Payment Success", response);
-          // In production: await axios.post('/api/verify-payment', { ...response, email });
-          navigate('/success');
-        },
-        theme: {
-          color: "#2563eb"
-        }
-      };
-
-      // Since we don't have a real server key here, we simulate a successful redirect
-      // after a short delay for UX purposes.
-      setTimeout(() => {
-        navigate('/success');
-      }, 1500);
-
-    } catch (err) {
-      console.error(err);
-      alert("Payment failed to initialize. Please try again.");
-    } finally {
+    // Simulate a successful registration delay without making a real network request
+    setTimeout(() => {
       setLoading(false);
-    }
+      navigate('/success');
+    }, 800);
   };
 
   return (
     <div id="checkout" className="max-w-lg mx-auto bg-white p-8 sm:p-12 rounded-[2.5rem] shadow-2xl shadow-slate-200 border border-slate-100">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-slate-900 mb-2">Claim Your Copy</h2>
+        <h2 className="text-3xl font-bold text-slate-900 mb-2">Claim Your Free Copy</h2>
         <p className="text-slate-500">Enter your email to receive the download link.</p>
       </div>
 
-      <form onSubmit={handlePayment} className="space-y-6">
+      <form onSubmit={handleRegister} className="space-y-6">
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
             Email Address
@@ -97,12 +60,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ price }) => {
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
           ) : (
-            `Pay ₹${price} & Download`
+            `Get Access Now`
           )}
         </button>
 
         <p className="text-xs text-center text-slate-400">
-          Secure payment processed by Razorpay. <br /> You'll receive a copy via email instantly.
+          Your privacy is safe. <br /> You'll receive the download link instantly.
         </p>
       </form>
     </div>

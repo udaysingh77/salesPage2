@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             onClick={onCtaClick}
             className="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white text-lg font-bold rounded-2xl hover:bg-blue-700 hover:scale-105 transition-all shadow-xl shadow-blue-200 active:scale-95"
           >
-            Get Instant Access – ₹299
+            Get Instant Access – Free
           </button>
           <p className="text-slate-500 font-medium">
             Join 5,000+ readers today.

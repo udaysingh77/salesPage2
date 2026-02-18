@@ -1,6 +1,6 @@
 {
   "name": "E-Book Nexus",
-  "description": "A high-converting, AI-enhanced digital book store featuring secure Razorpay payments, automated email delivery, and an interactive AI author assistant.",
+  "description": "A high-converting digital book store featuring secure Razorpay payments and automated email delivery.",
   "requestFramePermissions": [
     "camera"
   ]
